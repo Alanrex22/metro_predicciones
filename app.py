@@ -86,8 +86,9 @@ def predecir_afluencia(mes, estacion):
             paper_bgcolor='#111111'
         )
 
-        texto = f"📍 En {mes}, se estiman aproximadamente <strong>{estimado:,}</strong> pasajeros en <strong>{estacion.title()}</strong>."
-        return texto, fig
+        texto = f"📍 En **{mes}**, se estiman aproximadamente **{estimado:,}** pasajeros en **{estacion.title()}**." 
+        return dcc.Markdown(texto, dangerously_allow_html=True), fig
+
     else:
         return "❌ No se encontró ese mes o estación en los datos.", {}
 
